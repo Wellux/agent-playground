@@ -116,7 +116,7 @@ jobs:
         working-directory: prompts/ralph-meta-chain/scripts/harness
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           cache: pip
@@ -140,7 +140,7 @@ jobs:
         working-directory: prompts/ralph-meta-chain/voice-server
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           cache: pip
@@ -163,7 +163,7 @@ jobs:
         working-directory: prompts/ralph-meta-chain/obsidian-plugin
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "20"
           cache: npm
@@ -206,10 +206,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: py_compile
         run: python -m py_compile prompts/ralph-meta-chain/mcp-server/ralph_mcp_server.py
       - name: protocol smoke tests
         run: python prompts/ralph-meta-chain/tests/test_mcp_server.py -v
+      - name: auto-approval contract
+        run: python prompts/ralph-meta-chain/tests/test_auto_approval_contract.py -v
