@@ -14,6 +14,28 @@ Ralph, named after the Ralph Wiggum technique, lives here: eight scheduled promp
   <img alt="" src=".github/assets/divider-hell.svg" width="100%">
 </picture>
 
+<!-- onboarding:start -->
+### In 3 Minuten startklar
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/onboarding-dunkel.svg">
+  <img alt="In 3 Minuten startklar: 1. Klonen: Repo holen, zu ralph-meta-chain; 2. Probelauf: --dry-run zeigt alles, schreibt nichts; 3. Installieren: Befehle, Agents, Skills, Hooks; 4. Dashboard: /ralph-cron zeigt alle acht Achsen" src=".github/assets/onboarding-hell.svg" width="100%">
+</picture>
+
+1. **Klonen.** `git clone https://github.com/Wellux/agent-playground.git && cd agent-playground/prompts/ralph-meta-chain`.
+2. **Probelauf.** `install/install.sh --target claude-code,codex --dry-run`.
+3. **Installieren.** `install/install.sh --target claude-code,codex`; zurück geht es jederzeit mit `--uninstall`.
+4. **Dashboard.** In Claude Code `/ralph-cron` eingeben: alle acht Achsen auf einen Blick.
+
+**Was du davon hast**
+
+- Dein Agent lernt aus seinen eigenen Spuren, statt alles zu vergessen.
+- Jede Prompt-Änderung wird per A/B-Test geprüft, bevor sie zählt.
+- Ein Sandkasten, in dem kaputt gehen darf, was kaputt gehen will.
+
+**Nächster Schritt:** `cp config.example.yml config.yml`, `vault_path` setzen und mit `install/install.sh --target cron` die acht Achsen planen.
+<!-- onboarding:end -->
+
 ### How it works
 
 <picture>
