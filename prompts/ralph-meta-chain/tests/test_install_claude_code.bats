@@ -90,14 +90,14 @@ print('OK')
   run "$INSTALLER" --scope user
   [ "$status" -eq 0 ]
   run python3 -c "
-import json
+import json, os
 with open('$HOME/.claude/.mcp.json') as f:
     m = json.load(f)
 ralph = m['mcpServers']['ralph']
 assert ralph['command'] == 'python3'
 assert ralph['args'] == ['-m', 'ralph_mcp_server']
 assert ralph['env']['PYTHONPATH'].endswith('mcp-server'), ralph['env']
-assert ralph['env']['RALPH_REPO'].endswith('agent_testplayground'), ralph['env']
+assert os.path.realpath(ralph['env']['RALPH_REPO']) == os.path.realpath('$REPO'), ralph['env']
 print('OK')
 "
   [ "$status" -eq 0 ]
