@@ -66,7 +66,7 @@ setup() {
   run "$INSTALLER"
   [ "$status" -eq 0 ]
   run python3 -c "
-import tomllib
+import os, tomllib
 with open('$CODEX_HOME/config.toml','rb') as f:
     d = tomllib.load(f)
 ralph = d['mcp_servers']['ralph']
@@ -75,7 +75,7 @@ assert ralph['args'] == ['-m', 'ralph_mcp_server'], ralph
 assert 'cwd' in ralph and ralph['cwd'].endswith('mcp-server'), ralph
 env = ralph.get('env', {})
 assert env.get('PYTHONPATH','').endswith('mcp-server'), env
-assert env.get('RALPH_REPO','').endswith('agent_testplayground'), env
+assert os.path.realpath(env.get('RALPH_REPO','')) == os.path.realpath('$REPO'), env
 print('OK')
 "
   [ "$status" -eq 0 ]

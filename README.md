@@ -116,7 +116,7 @@ At the repo root, `harness/`, `obsidian-ralph/`, `scripts/` and `voice-server/` 
 - Point the evolve pass at `harness metrics roll-up --format json`; it still runs its own `jq` roll-up.
 - A full week of cron firings, so autoevolve judges its first real metrics window.
 - The rest of the [handoff backlog](prompts/ralph-meta-chain/docs/HANDOFF.md): per-folder compression thresholds, skip-when-empty checks before compress and research runs, `--why` on every dashboard, a `--report-only` migration mode, one `harness metrics dashboard`.
-- Finish the rename: 24 tracked files besides this page still say `agent_testplayground`. The old URL keeps redirecting meanwhile.
+- Finish the rename: 22 tracked files besides this page still say `agent_testplayground`. The old URL keeps redirecting meanwhile.
 
 ### Stack and credits
 
